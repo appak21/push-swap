@@ -1,8 +1,8 @@
 package pushswap
 
-type f func(stack []*Stack)
+type fn func(stack []*Stack)
 
-var cmd = map[string]f{
+var cmd = map[string]fn{
 	"pa":  pa,
 	"pb":  pb,
 	"sa":  sa,
