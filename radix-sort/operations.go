@@ -1,6 +1,8 @@
 package pushswap
 
-type fn func(stack []*Stack)
+import "pushswap/utils"
+
+type fn func(stack []*utils.Stack)
 
 var cmd = map[string]fn{
 	"pa":  pa,
@@ -16,6 +18,6 @@ var cmd = map[string]fn{
 	"rrr": rrr,
 }
 
-func operation(stack []*Stack, instr string) {
+func Operation(stack []*utils.Stack, instr string) {
 	cmd[instr](stack)
 }
