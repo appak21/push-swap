@@ -8,8 +8,10 @@ import (
 )
 
 func main() {
-	var nums []int
-	var err error
+	var (
+		nums []int
+		err  error
+	)
 	if utils.FlagRandPassed() {
 		nums, err = utils.GenerateRandomInts()
 		if err != nil {
@@ -28,5 +30,15 @@ func main() {
 			return
 		}
 	}
-	fmt.Print(pushswap.RadixSort(nums))
+	file, err := os.Create("result/push-swap-result.txt")
+	if err != nil {
+		fmt.Println("the named file wasn't created")
+		return
+	}
+	defer file.Close()
+	numsToStr := fmt.Sprint(nums)
+	file.WriteString("\"" + numsToStr[1:len(numsToStr)-1] + "\"\n")
+	instructions := pushswap.RadixSort(nums)
+	fmt.Print(instructions)
+	file.WriteString(instructions)
 }

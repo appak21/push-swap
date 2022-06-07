@@ -4,9 +4,10 @@ import (
 	"pushswap/utils"
 )
 
+//RadixSort returns string of instructions
 func RadixSort(nums []int) string {
-	res, opCount := "", 0
-	nums = utils.UInts(nums)
+	res := ""
+	utils.UInts(nums)
 	stack := []*utils.Stack{utils.NewStack(nums, len(nums)), utils.NewStack(make([]int, 0, len(nums)), 0)}
 	maxNum := stack[0].Length - 1
 	maxBits := 0
@@ -23,15 +24,11 @@ func RadixSort(nums []int) string {
 				Operation(stack, "pb")
 				res += "pb\n"
 			}
-			opCount++
 		}
-		// putting into boxes is done
 		for stack[1].Length != 0 {
 			Operation(stack, "pa")
 			res += "pa\n"
-			opCount++
 		}
 	}
-	//fmt.Println(stack[0].Nums, opCount)
 	return res
 }

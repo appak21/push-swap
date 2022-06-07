@@ -4,7 +4,7 @@ import "pushswap/utils"
 
 type fn func(stack []*utils.Stack)
 
-var cmd = map[string]fn{
+var Cmd = map[string]fn{
 	"pa":  pa,
 	"pb":  pb,
 	"sa":  sa,
@@ -19,5 +19,5 @@ var cmd = map[string]fn{
 }
 
 func Operation(stack []*utils.Stack, instr string) {
-	cmd[instr](stack)
+	Cmd[instr](stack)
 }
