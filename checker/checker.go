@@ -4,8 +4,9 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	pushswap "pushswap/instructions"
+	pushswap "pushswap/algo"
 	"pushswap/utils"
+	"sort"
 	"strings"
 )
 
@@ -27,7 +28,7 @@ func main() {
 	stack := []*utils.Stack{utils.NewStack(nums), utils.NewStack(make([]int, 0, len(nums)))}
 	operations := strings.Split(string(instructions), "\n")
 	l := len(operations) - 1
-	if operations[l-1] == "" {
+	if operations[l-1] == "" { //no need
 		l--
 	}
 	operations = operations[:l]
@@ -39,6 +40,18 @@ func main() {
 			return
 		}
 	}
-	fmt.Println("Stack a", stack[0].Nums)
+	res := stack[0].Nums
+	l, r := 0, len(res)-1
+	for l < r {
+		res[l], res[r] = res[r], res[l]
+		l++
+		r--
+	}
+	if sort.IntsAreSorted(res) {
+		fmt.Println("OK")
+	} else {
+		fmt.Println("KO")
+	}
+	//fmt.Println("Stack a", stack[0].Nums)
 	//fmt.Println("Stack b", stack[1].Nums)
 }

@@ -4,10 +4,10 @@ import (
 	"pushswap/utils"
 )
 
-//RadixSort returns string of instructions
+//RadixSort returns a string of instructions.
+//Its result is correct if there's no negative number.
 func RadixSort(nums []int) string {
 	res := ""
-	utils.UInts(nums)
 	stack := []*utils.Stack{utils.NewStack(nums), utils.NewStack(make([]int, 0, len(nums)))}
 	maxNum := len(stack[0].Nums) - 1
 	maxBits := 0

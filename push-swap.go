@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	pushswap "pushswap/instructions"
+	pushswap "pushswap/algo"
 	"pushswap/utils"
 	"sort"
 )
@@ -43,6 +43,7 @@ func main() {
 	numsToStr := fmt.Sprint(nums)
 	file.WriteString("\"" + numsToStr[1:len(numsToStr)-1] + "\"\n")
 	instructions := ""
+	utils.UInts(nums)
 	if len(nums) <= 5 {
 		instructions = pushswap.SmallSort(nums)
 	} else {
