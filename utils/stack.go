@@ -22,8 +22,7 @@ func (s *Stack) PopBack() int {
 }
 
 func (s *Stack) PushFront(n int) {
-	tmp := []int{n}
-	s.Nums = append(tmp, s.Nums...)
+	s.Nums = append([]int{n}, s.Nums...)
 }
 
 func (s *Stack) PopFront() int {
