@@ -18,14 +18,16 @@ func pb(s []*utils.Stack) { //push the top first element of stack a to stack b
 
 func sa(s []*utils.Stack) { //swap first 2 elements of stack a
 	if len(s[0].Nums) > 1 {
-		v1, v2 := s[0].PopBack(), s[0].PopBack()
+		v1 := s[0].PopBack()
+		v2 := s[0].PopBack()
 		s[0].PushBack(v1)
 		s[0].PushBack(v2)
 	}
 }
 func sb(s []*utils.Stack) { //swap first 2 elements of stack b
 	if len(s[1].Nums) > 1 {
-		v1, v2 := s[1].PopBack(), s[1].PopBack()
+		v1 := s[1].PopBack()
+		v2 := s[1].PopBack()
 		s[1].PushBack(v1)
 		s[1].PushBack(v2)
 	}
