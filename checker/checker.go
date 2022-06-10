@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	pushswap "pushswap/radix-sort"
+	pushswap "pushswap/instructions"
 	"pushswap/utils"
 	"strings"
 )

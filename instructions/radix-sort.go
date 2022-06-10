@@ -17,7 +17,7 @@ func RadixSort(nums []int) string {
 	for i := 0; i < maxBits; i++ {
 		for j := 0; j < len(nums); j++ {
 			num := stack[0].Nums[len(stack[0].Nums)-1]
-			if (num>>i)&1 == 1 {
+			if (num>>i)&1 == 0 {
 				Operation(stack, "ra")
 				res += "ra\n"
 			} else {

@@ -8,11 +8,11 @@ func NewStack(nums []int) *Stack {
 	return &Stack{nums}
 }
 
-func (s *Stack) Push(n int) {
+func (s *Stack) PushBack(n int) {
 	s.Nums = append(s.Nums, n)
 }
 
-func (s *Stack) Pop() int {
+func (s *Stack) PopBack() int {
 	if len(s.Nums) == 0 {
 		return -1
 	}

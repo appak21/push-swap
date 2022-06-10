@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"os"
 	pushswap "pushswap/instructions"
-	pushswap "pushswap/radix-sort"
 	"pushswap/utils"
 	"sort"
 )
