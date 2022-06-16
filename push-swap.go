@@ -22,8 +22,7 @@ func main() {
 		}
 	} else {
 		args := os.Args[1:]
-		if len(args) != 1 {
-			fmt.Println("Enter numbers or use -rand flag to be able to use randomly generated numbers")
+		if len(args) < 1 {
 			return
 		}
 		nums, err = utils.UniqInts(args[0])
@@ -35,11 +34,7 @@ func main() {
 	if sort.IntsAreSorted(nums) {
 		return
 	}
-	file, err := os.Create("result/push-swap-result.txt")
-	if err != nil {
-		fmt.Println("the named file wasn't created")
-		return
-	}
+	file, _ := os.Create("push-swap-result.txt")
 	defer file.Close()
 	numsToStr := fmt.Sprint(nums)
 	file.WriteString("\"" + numsToStr[1:len(numsToStr)-1] + "\"\n")
