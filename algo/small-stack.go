@@ -23,7 +23,6 @@ func SmallInstructions(nums []int, s []*utils.Stack) string {
 		op := match(aStack(a, half), a, b)
 		Operation(s, op)
 		res += op + "\n"
-
 	}
 	for {
 		a, b := s[0].Nums, s[1].Nums
@@ -41,13 +40,11 @@ func SmallInstructions(nums []int, s []*utils.Stack) string {
 func aStack(a []int, half int) string {
 	swap := saIdx(a)
 	mid, i := len(a)/2, len(a)-1
-
 	if a[i] < half {
-		return "pb" //this can be changed in match()
+		return "pb"
 	}
-
 	if swap > 0 {
-		if inOrder(a[i-1], a[i]) { //(inOrder(a[i], a[i-2]) && a[i-1] >= max)
+		if inOrder(a[i-1], a[i]) {
 			return "sa"
 		} else if swap < mid {
 			return "rra"
@@ -68,10 +65,8 @@ func bStack(bstack []int) string {
 	b := make([]int, len(bstack))
 	copy(b, bstack)
 	utils.UInts(b)
-
 	swap := sbIdx(b)
 	mid, j := len(b)/2, len(b)-1
-
 	if swap > 0 {
 		if inOrder(b[j], b[j-1]) {
 			return "sb"
@@ -79,9 +74,9 @@ func bStack(bstack []int) string {
 			return "rrb"
 		}
 	} else {
-		maxNumIdx := biggest(b) //or should I use sb and rb in stack b?
+		maxNumIdx := biggest(b)
 		if maxNumIdx == j {
-			return "pa" //allowed in some cases only.
+			return "pa"
 		} else if maxNumIdx < mid || inOrder(b[0], b[j]) {
 			return "rrb"
 		}
@@ -183,43 +178,14 @@ func isBSorted(nums []int) bool {
 	return sort.IntsAreSorted(nums)
 }
 
-/*
-func playerA(nums []int) bool {
-	cnt := 0
-	for i := 0; i < len(nums)-1; i++ {
-		if nums[i]-nums[i+1] != 1 {
-			cnt++
-		}
-		if cnt > 1 {
-			return true
-		}
-	}
-	return false
-}
-
-func playerB(nums []int) bool {
-	cnt := 0
-	for i := 0; i < len(nums)-1; i++ {
-		if nums[i+1]-nums[i] != 1 {
-			cnt++
-		}
-		if cnt > 1 {
-			return true
-		}
-	}
-	return false
-}
-*/
-// func abs(n int) int {
-// 	if n < 0 {
-// 		return -n
-// 	}
-// 	return n
-// }
-
 //"4 3 2 1 0" //11
-//4 3 2 1 0 //7
 //"2 3 0 1 4" //7
 //"4 3 2 1 0 5" //11
 //"3 0 4 1 2" //4
 //"2 1 3 6 5 8" //must return 9 ins //last step 7
+
+//for 25 => 87, 89, 108
+//for 10 => 21, 22, 27
+//for 100 => 800-1000
+//for 500 => 6784
+//for 1000 => 15068
