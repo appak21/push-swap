@@ -6,6 +6,7 @@ import (
 	pushswap "pushswap/algo"
 	"pushswap/utils"
 	"sort"
+	"strings"
 )
 
 func main() {
@@ -44,11 +45,12 @@ func main() {
 	file.WriteString("\"" + numsToStr[1:len(numsToStr)-1] + "\"\n")
 	instructions := ""
 	utils.UInts(nums)
-	if len(nums) <= 5 {
+	if len(nums) <= 100 {
 		instructions = pushswap.SmallSort(nums)
 	} else {
 		instructions = pushswap.RadixSort(nums)
 	}
 	fmt.Print(instructions)
 	file.WriteString(instructions)
+	fmt.Println("step ", len(strings.Split(instructions, "\n"))-1)
 }
