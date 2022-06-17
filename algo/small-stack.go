@@ -177,15 +177,3 @@ func isASorted(nums []int) bool {
 func isBSorted(nums []int) bool {
 	return sort.IntsAreSorted(nums)
 }
-
-//"4 3 2 1 0" //11
-//"2 3 0 1 4" //7
-//"4 3 2 1 0 5" //11
-//"3 0 4 1 2" //4
-//"2 1 3 6 5 8" //must return 9 ins //last step 7
-
-//for 25 => 87, 89, 108
-//for 10 => 21, 22, 27
-//for 100 => 800-1000
-//for 500 => 6784
-//for 1000 => 15068
