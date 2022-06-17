@@ -6,6 +6,7 @@ Algorithm: Radix Sort
 
 ### Usage: push-swap
 > As an argument, enter numbers or use -rand flag to use randomly generated numbers
+
 > Each result will be saved in `push-swap-result.txt` file. So if you want to test big numbers using `-rand` flag, you can see what numbers _random number generator_ gave and what instructions were used to sort them. It helps you easily copy/paste for **checker** program.
 ```console
 $ go run . "2 1 3 6 5 8"
