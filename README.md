@@ -2,7 +2,7 @@
 
 ### [Full description](https://github.com/appak21/01-edu/tree/master/subjects/push-swap)
 
-Algorithm: Radix Sort
+Algorithm: [Radix Sort](https://en.wikipedia.org/wiki/Radix_sort)
 
 ### Usage: push-swap
 > As an argument, enter numbers or use -rand flag to use randomly generated numbers
