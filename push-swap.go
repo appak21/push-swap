@@ -6,7 +6,6 @@ import (
 	pushswap "pushswap/algo"
 	"pushswap/utils"
 	"sort"
-	"strings"
 )
 
 func main() {
@@ -47,5 +46,5 @@ func main() {
 	}
 	fmt.Print(instructions)
 	file.WriteString(instructions)
-	fmt.Println("step ", len(strings.Split(instructions, "\n"))-1)
+	//fmt.Println("step ", len(strings.Split(instructions, "\n"))-1)
 }
