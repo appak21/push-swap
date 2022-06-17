@@ -45,3 +45,4 @@ OK
 $ ARG="4 67 3 87 23"; ./push-swap "$ARG" | go run ./checker "$ARG"
 OK
 ```
+[Algorithm explanation](https://medium.com/nerd-for-tech/push-swap-tutorial-fa746e6aba1e)
