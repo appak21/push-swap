@@ -15,10 +15,10 @@ func main() {
 	if len(args) < 1 {
 		return
 	}
-	if stat, _ := os.Stdin.Stat(); stat.Mode()&os.ModeNamedPipe == 0 {
-		fmt.Println("Error")
-		return
-	}
+	// if stat, _ := os.Stdin.Stat(); stat.Mode()&os.ModeNamedPipe == 0 {
+	// 	fmt.Println("Error")
+	// 	return
+	// }
 	instructions, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
 		fmt.Println("Error")
